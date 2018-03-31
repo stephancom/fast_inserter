@@ -47,8 +47,8 @@ module FastInserter
 
     def initialize(params)
       @table_name = params[:table]
-      @static_columns = params[:static_columns]
-      @additional_columns = params[:additional_columns]
+      @static_columns = params[:static_columns] || {}
+      @additional_columns = params[:additional_columns] || {}
       @variable_columns = Array(params[:variable_columns] || params[:variable_column])
       @options = params[:options] || {}
 
